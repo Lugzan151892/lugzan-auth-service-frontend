@@ -24,8 +24,8 @@ const eslintConfig = [
       'react/jsx-closing-bracket-location': [
         'error',
         {
-          nonEmpty: 'after-props',
-          selfClosing: 'after-props',
+          selfClosing: 'props-aligned',
+          nonEmpty: 'tag-aligned',
         },
       ],
     },

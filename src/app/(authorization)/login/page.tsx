@@ -20,7 +20,8 @@ const Login = () => {
     <div>
       <AuthLayout
         title={t('login')}
-        description="Complete the form below to log in.">
+        description="Complete the form below to log in."
+      >
         <div className="grid grid-cols-1 content center">
           <CustomInput label="E-mail" value={email} setValue={setEmail} />
           <CustomInput

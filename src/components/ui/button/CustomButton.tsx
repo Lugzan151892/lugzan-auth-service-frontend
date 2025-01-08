@@ -46,7 +46,8 @@ const CustomButton: React.FC<ICustomButtonProps> = ({
   return (
     <Button
       className={`border-1 px-24 py-5 rounded-md ${classes} ${className || ''} ${disabledClass}`}
-      onClick={onClick}>
+      onClick={onClick}
+    >
       {children || text}
     </Button>
   );
