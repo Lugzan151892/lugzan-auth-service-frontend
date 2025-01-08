@@ -10,26 +10,7 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends(
-    'next/core-web-vitals',
-    'next/typescript',
-    'eslint-plugin-react'
-  ),
-  {
-    plugins: {
-      react: require('eslint-plugin-react'),
-    },
-    files: ['**/*.jsx', '**/*.tsx'],
-    rules: {
-      'react/jsx-closing-bracket-location': [
-        'error',
-        {
-          selfClosing: 'props-aligned',
-          nonEmpty: 'tag-aligned',
-        },
-      ],
-    },
-  },
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
 ];
 
 export default eslintConfig;
