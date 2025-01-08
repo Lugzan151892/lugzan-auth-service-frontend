@@ -7,6 +7,8 @@ interface ICustomButtonProps {
   children?: ReactNode;
   type?: 'success' | 'error';
   level?: 1 | 2 | 3;
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
 const CustomButton: React.FC<ICustomButtonProps> = ({
@@ -15,6 +17,8 @@ const CustomButton: React.FC<ICustomButtonProps> = ({
   children,
   type = 'success',
   level = 1,
+  onClick,
+  disabled,
 }) => {
   const levelOneClasses =
     type === 'success' ? 'bg-blue border-blue' : 'bg-error border-error';
@@ -25,6 +29,7 @@ const CustomButton: React.FC<ICustomButtonProps> = ({
   const levelThreeClasses =
     'border-0 bg-transparent ' +
     (type === 'success' ? 'text-blue' : 'text-error');
+  const disabledClass = disabled ? 'pointer-events-none opacity-40' : '';
   const classes = useMemo(() => {
     if (level === 1) {
       return levelOneClasses;
@@ -40,7 +45,8 @@ const CustomButton: React.FC<ICustomButtonProps> = ({
   }, [level, levelOneClasses, levelTwoClasses, levelThreeClasses]);
   return (
     <Button
-      className={`border-1 px-24 py-5 rounded-md ${classes} ${className || ''}`}>
+      className={`border-1 px-24 py-5 rounded-md ${classes} ${className || ''} ${disabledClass}`}
+      onClick={onClick}>
       {children || text}
     </Button>
   );
