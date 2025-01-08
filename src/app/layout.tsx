@@ -5,8 +5,6 @@ import { NextIntlClientProvider } from 'next-intl';
 
 async function getMessages(locale: string) {
   try {
-    console.log(locale);
-
     return (await import(`../locales/${locale}/common.json`)).default;
   } catch (error) {
     console.error(`Failed to load messages for locale "${locale}"`, error);
@@ -15,9 +13,9 @@ async function getMessages(locale: string) {
 }
 
 function detectLocale(): string {
-  if (typeof window === 'undefined') return 'en'; // Default on server-side
+  if (typeof window === 'undefined') return 'en';
   const browserLocale = navigator.language || navigator.languages?.[0] || 'en';
-  return browserLocale.split('-')[0]; // Возвращаем только язык, например, "ru"
+  return browserLocale.split('-')[0];
 }
 
 const geistSans = Geist({
