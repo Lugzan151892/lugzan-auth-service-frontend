@@ -35,6 +35,11 @@ export default {
     container: {
       padding: '24px',
     },
+    borderWidth: {
+      DEFAULT: '1px',
+      0: '0',
+      1: '1px',
+    },
   },
   plugins: [],
 } satisfies Config;

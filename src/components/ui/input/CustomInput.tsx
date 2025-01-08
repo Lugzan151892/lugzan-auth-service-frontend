@@ -3,11 +3,16 @@ import { Input, Label, Field, Description } from '@headlessui/react';
 interface ICustomInputProps {
   label: string;
   description?: string;
+  className?: string;
 }
 
-const CustomInput: React.FC<ICustomInputProps> = ({ label, description }) => {
+const CustomInput: React.FC<ICustomInputProps> = ({
+  label,
+  description,
+  className,
+}) => {
   return (
-    <Field>
+    <Field className={className || ''}>
       {label ? (
         <div className="mb-2">
           <Label>{label}</Label>
