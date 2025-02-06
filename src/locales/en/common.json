@@ -1,4 +1,6 @@
 {
   "registration": "Sign Up",
-  "login": "Sign In"
+  "login": "Sign In",
+  "need_account": "Dont have an account?",
+  "have_account": "Already have an account?"
 }

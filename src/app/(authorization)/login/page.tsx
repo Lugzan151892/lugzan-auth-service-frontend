@@ -33,7 +33,7 @@ const Login = () => {
           />
           <CustomButton text="Sign Up" onClick={handleLogin} />
           <div className="mt-2">
-            <span>Dont have account?</span>
+            <span>{t('need_account')}</span>
             <Link href="/registration">
               <span className="cursor-pointer text-blue ml-2">
                 {t('registration')}

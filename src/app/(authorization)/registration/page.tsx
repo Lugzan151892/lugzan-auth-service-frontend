@@ -38,7 +38,7 @@ const Registration = () => {
           />
           <CustomButton text="Sign Up" />
           <div className="mt-2">
-            <span>Already have an account?</span>
+            <span>{t('have_account')}</span>
             <Link href="/login">
               <span className="cursor-pointer text-blue ml-2">
                 {t('login')}
